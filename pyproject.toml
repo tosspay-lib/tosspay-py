@@ -1,0 +1,80 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tosspay"
+dynamic = ["version"]
+description = '사업자 등록증 없이 결제 시스템을 만들수있는 라이브러리'
+readme = "README.md"
+requires-python = ">=3.8"
+license = "APACHE-2.0"
+keywords = []
+authors = [
+  { name = "5-23", email = "yhanbyeol6@gmail.com" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = ["requests"]
+
+[project.urls]
+Documentation = "https://github.com/tosspay-lib/tosspay-py/docs"
+Issues = "https://github.com/tosspay-lib/tosspay-py/issues"
+Source = "https://github.com/tosspay-lib/tosspay-py"
+
+[tool.hatch.version]
+path = "./tosspay/__about__.py"
+
+[tool.hatch.envs.default]
+dependencies = [
+  "coverage[toml]>=6.5",
+  "pytest",
+]
+[tool.hatch.envs.default.scripts]
+test = "pytest {args:tests}"
+test-cov = "coverage run -m pytest {args:tests}"
+cov-report = [
+  "- coverage combine",
+  "coverage report",
+]
+cov = [
+  "test-cov",
+  "cov-report",
+]
+
+[[tool.hatch.envs.all.matrix]]
+python = ["3.8", "3.9", "3.10", "3.11", "3.12"]
+
+[tool.hatch.envs.types]
+dependencies = [
+  "mypy>=1.0.0",
+]
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:tosspay tests}"
+
+[tool.coverage.run]
+source_pkgs = ["tosspay", "tests"]
+branch = true
+parallel = true
+omit = [
+  "./tosspay/__about__.py",
+]
+
+[tool.coverage.paths]
+tosspay = ["./tosspay"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]

@@ -1,0 +1,5 @@
+__title__ = 'tosspay'
+__version__ = '1.0.1'
+__author__ = '5-23'
+__author_email__ = 'rustacean@5-23.dev'
+__license__ = 'APACHE-2.0 License'

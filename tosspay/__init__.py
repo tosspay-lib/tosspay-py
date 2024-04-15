@@ -5,12 +5,14 @@ import time
 import random
 from .tosspay_json import TossPayData
 
+__version__ = '1.0.1'
+
 IS_RUNNING = False
 RES = []
 IDS = []
 
 class TossPay:
-    def __init__(self, name) -> None:
+    def __init__(self, name: str) -> None:
         global IS_RUNNING
         self.name = name
         if IS_RUNNING: return
