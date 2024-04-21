@@ -8,16 +8,16 @@
 
 ## on_payment
 특정 유저가 보낸돈만 확인할때만 사용합니다 <br/>
-[자세히보기 >](./docs/on_payment.md)
+[자세히보기 >](https://github.com/tosspay-lib/tosspay-py/blob/main/docs/on_payment.md)
 
 ## on_donate
 모든 사용자가 보낸 후원 내역을 확인합니다. <br/>
-[자세히보기 >](./docs/on_donate.md)
+[자세히보기 >](https://github.com/tosspay-lib/tosspay-py/blob/main/docs/on_donate.md)
 
 ## payment
 특정 유저가 보낸돈만 확인할때만 사용합니다 <br/>
-[자세히보기 >](./docs/payment.md)
+[자세히보기 >](https://github.com/tosspay-lib/tosspay-py/blob/main/docs/payment.md)
 
 ## donate
 모든 사용자가 보낸 후원 내역을 확인합니다. <br/>
-[자세히보기 >](./docs/donate.md)
+[자세히보기 >](https://github.com/tosspay-lib/tosspay-py/blob/main/docs/donate.md)
